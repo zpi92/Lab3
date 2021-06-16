@@ -1,0 +1,311 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+//Переменные LESS
+@primary: #1BC98E;
+@danger: #E64759;
+@warning: #E4D836;
+@success: #9F86FF;
+
+// змінна для active
+@active: crimson ;
+
+
+@theme-btn: #FFE082;
+@nav: #1976D2;
+@nav-height: 60px;
+@nav-link-size: 15px;
+
+.clear() {
+    margin: 0;
+    padding: 0;
+}
+
+//---------------- 14.3.	Застосувати LESS міксін. Любий, за власним розсудом. 
+#fonts {
+    .serif (@weight: normal, @size: 20px, @lineHeight: 20px) {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: @weight;
+        font-size: @size;
+        line-height: @lineHeight;
+    }
+
+    .sans-serif (@weight: normal, @size: 24px, @lineHeight: 20px) {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: @weight;
+        font-size: @size;
+        line-height: @lineHeight;
+    }
+}
+//---------------
+
+
+
+// --------------------
+
+.button-styles(@type) {
+    // .main__button--danger
+    // ---------- 14.1. візуальне відображення усіх кнопок
+    text-shadow: 1px 1px 0px #7b0d7a;
+
+    &--@{type} {
+        border-color: @@type;
+
+        &:hover {
+            background: @@type;
+        }
+
+//  14.1. візуальне відображення усіх кнопок( обрання)
+        &:active {
+            border-color: @active;
+            color: @active;
+            font-weight: bold;
+        }
+    }
+
+    &--@{type} when ((@type = warning) or (@type = danger)) {
+        border-color: @@type;
+
+        &:hover {
+            background: saturate(@@type, 40%);
+            color: @primary - @danger;
+            transform: rotate(-180deg);
+        }
+
+        #fonts > .sans-serif; //
+    }
+
+
+    &--@{type} when (@type = success) {
+        border-color: @@type;
+
+        &:hover {
+            background: darken(@@type, 25%);
+            color: mix(@primary, @danger, 50%);
+            font-size: 150%;
+        }
+    }
+    //---------------- Застосування міксіна з р.44
+    &--@{type} when ((@type = warning)) {
+        #fonts > .serif;
+    }
+
+    &--@{type} when ((@type = danger)) {
+        #fonts > .sans-serif;
+    }
+    //----- Застосування міксіна з р.44
+    width: 100%; // ширина 100%
+}
+
+.tile-styles(@type) {
+    // .main__tile--danger
+    &--@{type} {
+        & .main__header, & .main__plus {
+            color: @@type;
+        }
+    }
+   
+}
+
+* {
+    transition: .3s all;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+//------
+// Button 1
+@colour1: #7b81ec;
+@colour2: #3bd1d3;
+
+// Button 2
+@colour3: #fa80d2;
+@colour4: #fed757;
+
+button {
+    margin: 2em auto;
+    display: block;
+    -webkit-appearance: none;
+    border: 6px solid rgba(255,255,255,0.45);
+    border-radius: 50px;
+    padding: 1em 3em;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-clip: padding-box;
+    position: relative;
+    color: #FFF;
+}
+
+button:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50px;
+    z-index: -1;
+    filter: blur(14px);
+}
+
+button:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50px;
+    z-index: -1;
+    filter: blur(14px);
+}
+
+.button1 {
+    background-image: linear-gradient(90deg, @colour1, @colour2);
+}
+
+.button1:before {
+    background-image: linear-gradient(90deg, @colour1, transparent);
+}
+
+.button1:after {
+    background-image: linear-gradient(90deg, transparent, @colour2);
+}
+
+
+.button2 {
+    background-image: linear-gradient(90deg, @colour3, @colour4);
+}
+
+.button2:before {
+    background-image: linear-gradient(90deg, @colour3, transparent);
+}
+
+.button2:after {
+    background-image: linear-gradient(90deg, transparent, @colour4);
+}
+
+//---
+
+.mynav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @nav-height;
+    background-color: @nav;
+    padding: 0 30px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .24);
+
+    &__theme {
+        outline: none;
+        border: none;
+        padding: 8px 20px;
+        background: @theme-btn;
+        border-radius: 7px;
+        cursor: pointer;
+
+        &:active {
+            box-shadow: inset 0 0 20px -3px rgba(0, 0, 0, .6);
+        }
+    }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        .clear;
+ /*------------------------ 14.2 вибрати інший фон , зробити іншу прозорість------------------ */
+        background: saturate(@success, 90%);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        height: @nav-height;
+        padding: 0 15px;
+
+        &:hover {
+            background-color: lighten(@nav, 10%);
+        }
+    }
+
+    &__link {
+        font-size: @nav-link-size;
+        color: #fff;
+
+        &:hover {
+            font-size: @nav-link-size + 2px;
+        }
+    }
+}
+
+.main {
+    padding: 40px 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    &__tile {
+        padding: 20px;
+        width: 18%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        .tile-styles(danger);
+        .tile-styles(success);
+        .tile-styles(warning);
+        .tile-styles(primary);        
+    }
+
+    &__header {
+        margin-bottom: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__features {
+        list-style: none;
+        margin: 0 0 40px 0;
+        padding: 0 0 0 20px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    &__footer {
+        text-align: center;
+    }
+
+    &__button {
+        outline: 0;
+        padding: 8px 20px;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-size: 15px;
+        background: transparent;
+        .button-styles(danger);
+        .button-styles(success);
+        .button-styles(primary);
+        .button-styles(warning);
+    }
+
+
+}
+

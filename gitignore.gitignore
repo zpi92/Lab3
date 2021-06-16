@@ -1,0 +1,7 @@
+#не нужная нам папка
+node_modules/
+Properties/
+bin/
+#не нужный нам тип файлов
+*.txt
+*.csproj.user

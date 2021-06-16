@@ -1,0 +1,29 @@
+//{
+//  "compilerOptions": {
+//    "noImplicitAny": false,
+//    "noEmitOnError": true,
+//    "removeComments": true,
+//    "sourceMap": true,
+//    "experimentalDecorators": true,
+//    "outDir": "js",
+//    "outFile": "ts/script.js",
+//    "target": "es5"
+//  },
+//  "compileOnSave": true,
+//  "exclude": [
+//    "node_modules",
+//    "wwwroot"
+//  ]
+//}
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "outDir": "js",
+    "sourceMap": true,
+    "outFile": "ts/script.js"
+  },
+  "compileOnSave": true
+}

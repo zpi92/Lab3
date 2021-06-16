@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "less/less.style1.css",
+    "inputFile": "less/less.style1.less"
+  },
+  {
+    "outputFile": "less/less.style2.css",
+    "inputFile": "less/less.style2.less"
+  },
+  {
+    "outputFile": "gulpfile.es5.js",
+    "inputFile": "gulpfile.js"
+  }
+]

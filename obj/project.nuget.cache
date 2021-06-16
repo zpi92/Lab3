@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "73hWSEzCZgzbVUudvX0yGyXYDnhX7WY116P+W8g+uL/R+xIAwDjKQm3RVa6MfceBxmZPfN0VMtg0hK6h1uUorg==",
+  "success": true,
+  "projectFilePath": "D:\\KPI\\3Course\\Semester2\\SMiTRPZ3\\LR\\Labs\\Labs\\Labs.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cti\\.nuget\\packages\\bootstrap\\4.6.0\\bootstrap.4.6.0.nupkg.sha512",
+    "C:\\Users\\cti\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
+    "C:\\Users\\cti\\.nuget\\packages\\microsoft.typescript.msbuild\\4.2.4\\microsoft.typescript.msbuild.4.2.4.nupkg.sha512",
+    "C:\\Users\\cti\\.nuget\\packages\\node.js\\5.3.0\\node.js.5.3.0.nupkg.sha512",
+    "C:\\Users\\cti\\.nuget\\packages\\popper.js\\1.16.1\\popper.js.1.16.1.nupkg.sha512"
+  ],
+  "logs": []
+}
